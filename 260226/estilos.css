@@ -1,0 +1,111 @@
+/* Configuracion general */
+body{
+    margin: 0;
+    padding: 20px;
+    /*espacios respecto a  nuestro navegador*/
+    font-family:Arial, sans-serif;
+    background-color: aliceblue;
+
+    min-height: 100vh;
+    /* Ajustando el alto del navegador*/
+}
+/* contenedor principal que dice que ocupara todo el ancho de la pagina web */
+/* Esto es una clase en css */
+.container{
+    width: 100%;
+}
+
+/* HEADER */
+header{
+    background-color: rgba(221, 99, 11, 0.877);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+/* navegacion */
+nav{
+    background-color: rgba(255, 204, 0, 0.751);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding:0;
+    display: flex;
+    gap: 15px;
+}
+
+nav a{
+    text-decoration: none;
+    color: rgba(82, 79, 79, 0.648);
+    font-weight: bold;
+}
+
+nav a:hover{
+    color: black;
+}
+
+/* layout principal */
+.layout{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* MAIN */
+
+main{
+    background: rgba(115, 218, 122, 0.638);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+article{
+    background: rgba(59, 69, 110, 0.766);
+    padding: 10px;
+    border-radius: 10px;
+}
+section{
+    background: rgb(131, 161, 71);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.main-footer{
+    background: rgba(188, 132, 141, 0.861);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+ /* aside */
+
+ aside{
+    background: rgb(44, 230, 230);
+    padding: 20px;
+    border-radius: 10px;
+
+ }
+ aside section{
+    background: rgba(136, 213, 20, 0.771);
+    margin-bottom: 20px;
+ }
+
+
+ /* footer general */
+ .page-footer{
+    margin-top: 20px;
+    background: palevioletred;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+ }

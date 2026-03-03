@@ -1,0 +1,12 @@
+h1{ color: chocolate;
+}
+.tituloAzul{
+    color: blue;
+}
+.tituloRojo{
+    color: red;
+}
+.tutuloBorde{
+    border: 1px solid black;
+    background-color: yellow;
+}
