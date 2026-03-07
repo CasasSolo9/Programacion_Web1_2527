@@ -7,7 +7,7 @@ body{
 }
 /* Encabezado*/
 header{
-    background-color: #333;
+    background-color: #650592;
     color: white;
     padding: 10px 0px;
     display: flex;
@@ -29,12 +29,12 @@ nav ul li{
     margin-right: 15px;
 }
 .anclas{
-    color: aliceblue;
+    color: rgb(10, 97, 173);
 }
 section{
     padding: 20px;
     margin: 10px;
-    background-color: aliceblue;
+    background-color: rgb(20, 76, 124);
     border-radius: 10px;
     box-shadow: 10px 2px 15px;
 
