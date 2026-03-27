@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .container { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
+        h1 { color: #28a745; }
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 2px solid #ddd; border-radius: 8px; font-size: 1.1em; }
+        button { background: #28a745; color: white; border: none; padding: 12px 30px; font-size: 1.1em; border-radius: 8px; cursor: pointer; margin-top: 15px; }
+        button:hover { background: #218838; }
+        .resultado { margin-top: 25px; font-size: 1.6em; font-weight: bold; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora Básica</h1>
+        
+        <form id="calcForm">
+            <input type="number" id="num1" step="any" placeholder="Primer número" required>
+            <input type="number" id="num2" step="any" placeholder="Segundo número" required>
+            
+            <select id="operacion" required>
+                <option value="">Selecciona operación</option>
+                <option value="suma">Suma (+)</option>
+                <option value="resta">Resta (-)</option>
+                <option value="multiplicacion">Multiplicación (×)</option>
+                <option value="division">División (÷)</option>
+                <option value="modulo">Módulo (%)</option>
+            </select>
+            
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+
+        <div class="resultado" id="resultado"></div>
+    </div>
+
+    <script>
+        function calcular() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operacion = document.getElementById('operacion').value;
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (isNaN(num1) || isNaN(num2)) {
+                resultadoDiv.innerHTML = '<span style="color:red;">Por favor ingresa números válidos</span>';
+                return;
+            }
+
+            let resultado = 0;
+            let simbolo = '';
+
+            switch(operacion) {
+                case 'suma':
+                    resultado = num1 + num2;
+                    simbolo = '+';
+                    break;
+                case 'resta':
+                    resultado = num1 - num2;
+                    simbolo = '-';
+                    break;
+                case 'multiplicacion':
+                    resultado = num1 * num2;
+                    simbolo = '×';
+                    break;
+                case 'division':
+                    if (num2 === 0) {
+                        resultadoDiv.innerHTML = '<span style="color:red;">No se puede dividir entre cero</span>';
+                        return;
+                    }
+                    resultado = num1 / num2;
+                    simbolo = '÷';
+                    break;
+                case 'modulo':
+                    if (num2 === 0) {
+                        resultadoDiv.innerHTML = '<span style="color:red;">No se puede calcular módulo con cero</span>';
+                        return;
+                    }
+                    resultado = num1 % num2;
+                    simbolo = '%';
+                    break;
+                default:
+                    resultadoDiv.innerHTML = '<span style="color:red;">Selecciona una operación</span>';
+                    return;
+            }
+
+            resultadoDiv.innerHTML = `
+                <strong>${num1} ${simbolo} ${num2} = ${resultado}</strong>
+            `;
+        }
+    </script>
+</body>
+</html>

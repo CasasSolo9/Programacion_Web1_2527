@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+        }
+        h1 { color: #007bff; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparador de Dos Números</h1>
+        
+        <form action="comparador.html" method="GET">
+            <input type="number" name="num1" step="any" placeholder="Primer número" required>
+            <input type="number" name="num2" step="any" placeholder="Segundo número" required>
+            <button type="submit">Comparar Números</button>
+        </form>
+
+        <div style="margin-top: 30px; font-size: 1.5em;">
+            <script>
+                const params = new URLSearchParams(window.location.search);
+                const n1 = parseFloat(params.get('num1'));
+                const n2 = parseFloat(params.get('num2'));
+
+                if (!isNaN(n1) && !isNaN(n2)) {
+                    if (n1 > n2) {
+                        document.write(`<span style="color:green;">${n1} es MAYOR que ${n2}</span>`);
+                    } else if (n1 < n2) {
+                        document.write(`<span style="color:green;">${n1} es MENOR que ${n2}</span>`);
+                    } else {
+                        document.write(`<span style="color:blue;">${n1} y ${n2} son IGUALES</span>`);
+                    }
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>

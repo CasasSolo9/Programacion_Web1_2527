@@ -1,7 +1,7 @@
 <?php
-$host = "127.0.0.1:3308";
+$host = "127.0.0.1:3306";
 $user = "root";
-$password = "123456";
+$password = "Aaron123";
 $dbName = "crud_app";
 
 $conn = new mysqli($host,$user,$password,$dbName);
