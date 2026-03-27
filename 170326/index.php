@@ -10,7 +10,7 @@
 <form action="logica.php" method="get">
     <label for="">Nombre:</label>
     <input type="text" maxlength="35" name="nombre">
-    <!-- <hr>
+    <hr>
     <label for="">1er Apellido</label>
     <input type="text"  required name="1erApellido">
     <hr>
@@ -24,7 +24,7 @@
     <input type="email" name="correo">
     <hr>
     <label for="">Contraseña</label>
-    <input type="password" name="password"> -->
+    <input type="password" name="password">
 
 
     <button type="submit">Enviar</button>
